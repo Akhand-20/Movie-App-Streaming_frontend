@@ -1,0 +1,11 @@
+.homePage {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.rows {
+  position: relative;
+  z-index: 10;
+  margin-top: -80px;
+  padding-bottom: 60px;
+}

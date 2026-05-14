@@ -1,0 +1,74 @@
+.rowContainer {
+  margin-bottom: 40px;
+  padding: 0 48px;
+}
+
+.rowTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.rowWrapper {
+  position: relative;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 0 16px;
+  scrollbar-width: none;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--transition);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.rowWrapper:hover .scrollBtn {
+  opacity: 1;
+}
+
+.scrollBtn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.scrollLeft {
+  left: -20px;
+}
+
+.scrollRight {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .rowContainer {
+    padding: 0 16px;
+  }
+
+  .scrollBtn {
+    display: none;
+  }
+}
