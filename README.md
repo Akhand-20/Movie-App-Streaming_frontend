@@ -1,16 +1,52 @@
-# React + Vite
+# CINEMAX — Movie Streaming App (Backend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-quality REST API backend for the CINEMAX movie streaming platform.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
+Frontend: https://movie-app-streaming-frontend.vercel.app
+Backend API: https://movie-app-streaming.onrender.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Tech Stack
+- Node.js + Express.js
+- MongoDB Atlas + Mongoose
+- JWT Authentication + bcryptjs
+- TMDB API Integration with MongoDB caching
+- Deployed on Render
 
-## React Compiler
+## 🏗 Architecture
+6-layer architecture:
+Routes → Controllers → Services → Repositories → Schemas → MongoDB
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 API Endpoints
+- POST /api/auth/register
+- POST /api/auth/login
+- GET /api/auth/me
+- GET /api/movies/trending
+- GET /api/movies/top-rated
+- GET /api/movies/search?q=query
+- GET /api/movies/:id
+- GET /api/movies/:id/videos
+- GET /api/movies/:id/recommendations
+- GET /api/watchlist (protected)
+- POST /api/watchlist (protected)
+- DELETE /api/watchlist/:tmdbId (protected)
 
-## Expanding the ESLint configuration
+## ⚙️ Setup
+```bash
+npm install
+cp .env.example .env
+# Fill in your env variables
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔑 Environment Variables
+```
+PORT=8000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=7d
+TMDB_KEY=your_tmdb_key
+TMDB_BASE_URL=https://api.themoviedb.org/3
+NODE_ENV=development
+CLIENT_URL=your_frontend_url
+```
